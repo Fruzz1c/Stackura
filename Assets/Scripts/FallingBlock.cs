@@ -1,43 +1,67 @@
+// FallingBlock.cs
 using UnityEngine;
 
 public class FallingBlock : MonoBehaviour
 {
-    [Tooltip("Скорость падения (ед./сек)")]
+    [Tooltip("Скорость падения (units/sec)")]
     public float fallSpeed = 5f;
 
     private StackManager manager;
     private Rigidbody rb;
-    private bool hasLanded = false;
+    private bool triggered = false;
+    private float fallTimer = 0f;
 
-    /// <summary>Инициализация: передаём менеджер и скорость падения</summary>
+    /// <summary>Передаём ссылку на менеджер и скорость падения</summary>
     public void Initialize(StackManager mgr, float speed)
     {
-        manager = mgr;
+        manager   = mgr;
         fallSpeed = speed;
-
-        // создаём Rigidbody и отключаем стандартную гравитацию
-        rb = gameObject.AddComponent<Rigidbody>();
+        rb        = gameObject.AddComponent<Rigidbody>();
         rb.useGravity = false;
     }
 
     void FixedUpdate()
     {
-        if (rb != null && !hasLanded)
+        if (triggered) return;
+
+        // Двигаем вниз с постоянной скоростью
+        rb.velocity = Vector3.down * fallSpeed;
+    }
+
+    void Update()
+    {
+        if (triggered) return;
+
+        // Считаем время падения
+        fallTimer += Time.deltaTime;
+        if (fallTimer >= 0.5f)
         {
-            rb.velocity = Vector3.down * fallSpeed;
+            // по таймауту — конец игры
+            Debug.Log("Game Over! (timeout)");
+            triggered = true;
+            Destroy(this);
         }
     }
 
-    void OnCollisionEnter(Collision col)
+    void OnCollisionEnter(Collision c)
     {
-        if (hasLanded || manager == null) return;
-        hasLanded = true;
+        if (triggered || manager == null) return;
+        triggered = true;
 
-        // «замораживаем» блок на месте
-        rb.velocity = Vector3.zero;
-        rb.isKinematic = true;
+        bool placed = manager.HandleBlockLanding(gameObject);
 
-        // сообщаем менеджеру, что блок сел
-        manager.HandleBlockLanding(gameObject);
+        if (placed)
+        {
+            // остановка и «заморозка» удачно установленного блока
+            rb.velocity    = Vector3.zero;
+            rb.isKinematic = true;
+        }
+        else
+        {
+            // промах — оставляем динамическим, пусть падает дальше
+            Debug.Log("Game Over! (miss)");
+        }
+
+        Destroy(this);
     }
 }

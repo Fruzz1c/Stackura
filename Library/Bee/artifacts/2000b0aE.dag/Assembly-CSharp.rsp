@@ -522,12 +522,16 @@
 "Assets/PluginYourGames/Scripts/Server/ServerJson.cs"
 "Assets/PluginYourGames/Scripts/Utils/JsonYG.cs"
 "Assets/PluginYourGames/Scripts/Utils/LocalStorage_yg.cs"
+"Assets/Scripts/BaseBlock.cs"
 "Assets/Scripts/CameraFollow.cs"
+"Assets/Scripts/FadeIn.cs"
 "Assets/Scripts/FallingBlock.cs"
+"Assets/Scripts/FragmentFade.cs"
 "Assets/Scripts/GameManager.cs"
 "Assets/Scripts/MovingBlock.cs"
 "Assets/Scripts/ScoreDisplay.cs"
 "Assets/Scripts/StackManager.cs"
+"Assets/Scripts/UiManager.cs"
 -langversion:9.0
 /deterministic
 /optimize+

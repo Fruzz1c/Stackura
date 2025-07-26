@@ -86,8 +86,8 @@
     <Compile Include="Assets\PluginYourGames\Modules\StickyAdv\Scripts\Editor\StickyAdv_build.cs" />
     <Compile Include="Assets\PluginYourGames\Platforms\YandexGames\Scripts\Editor\LogoFormat.cs" />
     <Compile Include="Assets\PluginYourGames\Scripts\EditorScr\Editor\EditorUtils.cs" />
-    <Compile Include="Assets\PluginYourGames\Platforms\YandexGames\Scripts\Editor\PixelRatioMobile.cs" />
     <Compile Include="Assets\PluginYourGames\Modules\Storage\Scripts\Editor\IconEditorSaveFile.cs" />
+    <Compile Include="Assets\PluginYourGames\Platforms\YandexGames\Scripts\Editor\PixelRatioMobile.cs" />
     <Compile Include="Assets\PluginYourGames\Scripts\InfoYG\Editor\InfoYGEditorWindow.cs" />
     <Compile Include="Assets\PluginYourGames\Modules\AutoTranslateLangs\Scripts\Editor\FontMasseInstallEditorWindow.cs" />
     <Compile Include="Assets\PluginYourGames\Modules\InterstitialAdv\Scripts\Editor\InterAdv_build.cs" />

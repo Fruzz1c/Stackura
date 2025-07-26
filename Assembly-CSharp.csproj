@@ -74,6 +74,7 @@
     <Compile Include="Assets\PluginYourGames\Modules\RewardedAdv\Scripts\RewardedAdv_info.cs" />
     <Compile Include="Assets\PluginYourGames\Scripts\EditorScr\Attributes\ColorYGAttribute.cs" />
     <Compile Include="Assets\PluginYourGames\Modules\AutoTranslateLangs\Scripts\UtilsLang.cs" />
+    <Compile Include="Assets\Scripts\BaseBlock.cs" />
     <Compile Include="Assets\Other\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01.cs" />
     <Compile Include="Assets\PluginYourGames\Modules\RewardedAdv\Scripts\RewardedAdv_yg.cs" />
     <Compile Include="Assets\PluginYourGames\Modules\Fullscreen\Scripts\Fullscreen_interface.cs" />
@@ -142,6 +143,7 @@
     <Compile Include="Assets\PluginYourGames\Scripts\Platform\PlatformSettings.cs" />
     <Compile Include="Assets\PluginYourGames\Modules\Authorization\Scripts\Auth_lang.cs" />
     <Compile Include="Assets\PluginYourGames\Modules\StickyAdv\Scripts\StickyAdv_yandexPlatform.cs" />
+    <Compile Include="Assets\Scripts\FadeIn.cs" />
     <Compile Include="Assets\Other\TextMesh Pro\Examples &amp; Extras\Scripts\VertexShakeA.cs" />
     <Compile Include="Assets\PluginYourGames\Modules\Payments\Scripts\Payments_info.cs" />
     <Compile Include="Assets\PluginYourGames\Modules\Payments\Scripts\Payments_callingSimulation.cs" />
@@ -149,12 +151,13 @@
     <Compile Include="Assets\PluginYourGames\Scripts\Server\ServerJson.cs" />
     <Compile Include="Assets\PluginYourGames\Scripts\Platform\PlatformToggles.cs" />
     <Compile Include="Assets\Scripts\StackManager.cs" />
-    <Compile Include="Assets\PluginYourGames\Modules\AutoTranslateLangs\Scripts\CorrectLang.cs" />
     <Compile Include="Assets\PluginYourGames\Modules\Payments\Scripts\PurchaseYG.cs" />
+    <Compile Include="Assets\PluginYourGames\Modules\AutoTranslateLangs\Scripts\CorrectLang.cs" />
     <Compile Include="Assets\Scripts\GameManager.cs" />
     <Compile Include="Assets\Other\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark03.cs" />
     <Compile Include="Assets\PluginYourGames\Modules\Leaderboards\Scripts\LB_yg.cs" />
     <Compile Include="Assets\Scripts\CameraFollow.cs" />
+    <Compile Include="Assets\Scripts\FragmentFade.cs" />
     <Compile Include="Assets\Other\TextMesh Pro\Examples &amp; Extras\Scripts\TextMeshProFloatingText.cs" />
     <Compile Include="Assets\PluginYourGames\Scripts\InfoYG\InfoYGReferences.cs" />
     <Compile Include="Assets\PluginYourGames\Example\Scripts\CanvasScaleForMobile.cs" />
@@ -162,6 +165,7 @@
     <Compile Include="Assets\PluginYourGames\Scripts\Basic\GameReadyAPI.cs" />
     <Compile Include="Assets\Other\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextSelector_B.cs" />
     <Compile Include="Assets\PluginYourGames\Modules\Storage\Scripts\Storage_yg.cs" />
+    <Compile Include="Assets\Scripts\UiManager.cs" />
     <Compile Include="Assets\Other\TextMesh Pro\Examples &amp; Extras\Scripts\TeleType.cs" />
     <Compile Include="Assets\PluginYourGames\Modules\Payments\Scripts\Payments_lang.cs" />
     <Compile Include="Assets\PluginYourGames\Scripts\InfoYG\InfoYG_lang.cs" />
@@ -169,8 +173,8 @@
     <Compile Include="Assets\PluginYourGames\Scripts\Platform\PlatformSettings_langs.cs" />
     <Compile Include="Assets\PluginYourGames\Modules\Payments\Scripts\PaymentsCatalogYG.cs" />
     <Compile Include="Assets\PluginYourGames\Example\Scripts\BasicData.cs" />
-    <Compile Include="Assets\Other\TextMesh Pro\Examples &amp; Extras\Scripts\ChatController.cs" />
     <Compile Include="Assets\PluginYourGames\Modules\Payments\Scripts\ConsumePurchasesYG.cs" />
+    <Compile Include="Assets\Other\TextMesh Pro\Examples &amp; Extras\Scripts\ChatController.cs" />
     <Compile Include="Assets\Other\TextMesh Pro\Examples &amp; Extras\Scripts\VertexColorCycler.cs" />
     <Compile Include="Assets\Other\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextEventHandler.cs" />
     <Compile Include="Assets\PluginYourGames\Modules\Leaderboards\Scripts\LBPlayerDataYG.cs" />
@@ -193,8 +197,8 @@
     <Compile Include="Assets\PluginYourGames\Modules\Payments\Example\Scripts\ReceivingPurchaseExample.cs" />
     <Compile Include="Assets\PluginYourGames\Modules\Payments\Scripts\Payments_yandexPlatform.cs" />
     <Compile Include="Assets\PluginYourGames\Modules\Localization\Scripts\Lang_info.cs" />
-    <Compile Include="Assets\Other\TextMesh Pro\Examples &amp; Extras\Scripts\VertexJitter.cs" />
     <Compile Include="Assets\PluginYourGames\Scripts\EditorScr\Attributes\HeaderYGAttribute.cs" />
+    <Compile Include="Assets\Other\TextMesh Pro\Examples &amp; Extras\Scripts\VertexJitter.cs" />
     <Compile Include="Assets\Other\TextMesh Pro\Examples &amp; Extras\Scripts\WarpTextExample.cs" />
     <Compile Include="Assets\PluginYourGames\Modules\RewardedAdv\Scripts\RewardedAdv_optionalPlatform.cs" />
     <Compile Include="Assets\PluginYourGames\Modules\Fullscreen\Scripts\Fullscreen_yandexPlatform.cs" />
@@ -205,9 +209,9 @@
     <Compile Include="Assets\PluginYourGames\Scripts\Utils\JsonYG.cs" />
     <Compile Include="Assets\PluginYourGames\Scripts\Platform\CommonOptions.cs" />
     <Compile Include="Assets\PluginYourGames\Modules\Storage\Scripts\Storage_projectSettings.cs" />
-    <Compile Include="Assets\PluginYourGames\Scripts\EditorScr\Module.cs" />
-    <Compile Include="Assets\PluginYourGames\Modules\Localization\Scripts\Lang_interface.cs" />
     <Compile Include="Assets\PluginYourGames\Modules\Storage\Scripts\SavesYG2.cs" />
+    <Compile Include="Assets\PluginYourGames\Modules\Localization\Scripts\Lang_interface.cs" />
+    <Compile Include="Assets\PluginYourGames\Scripts\EditorScr\Module.cs" />
     <Compile Include="Assets\PluginYourGames\Modules\Authorization\Scripts\Auth_yandexPlatform.cs" />
     <Compile Include="Assets\Scripts\FallingBlock.cs" />
     <Compile Include="Assets\PluginYourGames\Scripts\Basic\YG2.cs" />
@@ -256,6 +260,7 @@
     <None Include="Assets\PluginYourGames\Modules\RewardedAdv\Version.txt" />
     <None Include="Assets\Other\TextMesh Pro\Shaders\TMP_SDF.shader" />
     <None Include="Assets\PluginYourGames\Modules\Storage\Version.txt" />
+    <None Include="Assets\Other\Free Stylized Skybox\ReadMe.txt" />
     <None Include="Assets\Other\TextMesh Pro\Shaders\TMP_SDF-Mobile SSD.shader" />
     <None Include="Assets\PluginYourGames\Version.txt" />
     <None Include="Assets\Other\TextMesh Pro\Resources\LineBreaking Leading Characters.txt" />
