@@ -1,66 +1,104 @@
-
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using YG;  // PluginYourGames
 
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance { get; private set; }
-    public int Score { get; private set; }
-    public int HighScore { get; private set; }
+    public int Score      { get; private set; }
+    public int HighScore  { get; private set; }
 
     [Header("Прокачка сложности")]
     [Tooltip("На сколько прибавлять moveSpeed в StackManager за каждый блок")]
     public float speedIncrement = 0.5f;
 
     private StackManager stackManager;
+    private float initialSpeed;
+
+    private const string LeaderboardId = "myLeaderboard";
 
     void Awake()
     {
-        // Singleton
+        // Синглтон
         if (Instance != null && Instance != this)
         {
             Destroy(gameObject);
             return;
         }
         Instance = this;
-        //DontDestroyOnLoad(gameObject);
+        DontDestroyOnLoad(gameObject);
 
-        // Загрузка рекорда
-        HighScore = PlayerPrefs.GetInt("HighScore", 0);
-
-        // найдём StackManager в сцене
+        // Сохраняем стартовую скорость
         stackManager = FindObjectOfType<StackManager>();
+        if (stackManager != null)
+            initialSpeed = stackManager.moveSpeed;
+
+        // Локальный запасной рекорд
+        HighScore = PlayerPrefs.GetInt("HighScore", 0);
+        Score     = 0;
     }
 
-    /// <summary>
-    /// Вызывается, когда игрок успешно поставил блок
-    /// </summary>
+    void Start()
+    {
+        // Ждём инициализации SDK
+        if (YG2.isSDKEnabled) InitCloud();
+        else                 YG2.onGetSDKData += InitCloud;
+    }
+
+    void OnDestroy()
+    {
+        YG2.onGetSDKData -= InitCloud;
+    }
+
+    private void InitCloud()
+    {
+        // Storage-модуль автоматически загружает все поля в YG2.saves при старте :contentReference[oaicite:2]{index=2}
+        HighScore = YG2.saves.highScore;
+        Debug.Log($"[Cloud] Загружен highScore = {HighScore}");
+    }
+
+    /// <summary>Вызывать из StackManager при успешной установке блока</summary>
     public void OnBlockPlaced()
     {
-        // инкрементируем счёт
         Score++;
 
-        // проверяем рекорд
         if (Score > HighScore)
         {
             HighScore = Score;
+            YG2.saves.highScore = HighScore;
+            YG2.SaveProgress();                  // сохраняем в облако и локально :contentReference[oaicite:3]{index=3}
             PlayerPrefs.SetInt("HighScore", HighScore);
         }
 
-        // повышаем сложность
         if (stackManager != null)
             stackManager.moveSpeed += speedIncrement;
     }
 
-    /// <summary>
-    /// Сброс игры (вызывать при Game Over)
-    /// </summary>
+    /// <summary>Game Over — пишем в лидерборд и показываем его UI</summary>
+    public void GameOver()
+    {
+        // Запись в лидерборд :contentReference[oaicite:4]{index=4}
+        YG2.SetLeaderboard(LeaderboardId, Score);
+
+        // Если вы добавили в сцену префаб LeaderboardCanvas с компонентом LeaderboardYG,
+        // то просто обновим его:
+        var lb = FindObjectOfType<LeaderboardYG>();
+        if (lb != null) lb.UpdateLB();
+
+        Restart();
+    }
+
+    /// <summary>Для совместимости с вашим FallingBlock.cs</summary>
     public void ResetGame()
     {
+        GameOver();
+    }
+
+    private void Restart()
+    {
         Score = 0;
-        // сброс скорости на первоначальную (если нужно)
         if (stackManager != null)
-            stackManager.moveSpeed = stackManager.moveSpeed - Score * speedIncrement;
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+            stackManager.moveSpeed = initialSpeed;
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 }

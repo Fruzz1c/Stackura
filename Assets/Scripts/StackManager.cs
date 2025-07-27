@@ -49,8 +49,11 @@ public class StackManager : MonoBehaviour
         if (!gameStarted)
             return;
 
-        if (currentBlock != null && Input.GetKeyDown(KeyCode.Space))
+        // Проверяем ввод: Space, левая кнопка мыши или касание экрана
+        if (currentBlock != null && (Input.GetKeyDown(KeyCode.Space) || Input.GetMouseButtonDown(0) || Input.touchCount > 0))
+        {
             DropCurrent();
+        }
     }
 
     /// <summary>

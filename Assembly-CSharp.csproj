@@ -69,6 +69,7 @@
     <Compile Include="Assets\PluginYourGames\Modules\AutoTranslateLangs\Scripts\AutoLang_info.cs" />
     <Compile Include="Assets\PluginYourGames\Scripts\Other\PlatformEventsYG2.cs" />
     <Compile Include="Assets\PluginYourGames\Scripts\InfoYG\BasicSettings.cs" />
+    <Compile Include="Assets\Scripts\LeaderboardController.cs" />
     <Compile Include="Assets\PluginYourGames\Modules\RewardedAdv\Scripts\RewardedAdv_projectSettings.cs" />
     <Compile Include="Assets\PluginYourGames\Modules\InterstitialAdv\Scripts\InterAdv_yandexPlatform.cs" />
     <Compile Include="Assets\PluginYourGames\Modules\RewardedAdv\Scripts\RewardedAdv_info.cs" />
@@ -214,6 +215,7 @@
     <Compile Include="Assets\PluginYourGames\Scripts\EditorScr\Module.cs" />
     <Compile Include="Assets\PluginYourGames\Modules\Authorization\Scripts\Auth_yandexPlatform.cs" />
     <Compile Include="Assets\Scripts\FallingBlock.cs" />
+    <Compile Include="Assets\Scripts\MySaves.cs" />
     <Compile Include="Assets\PluginYourGames\Scripts\Basic\YG2.cs" />
     <Compile Include="Assets\Other\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01_UGUI.cs" />
     <Compile Include="Assets\PluginYourGames\Modules\Authorization\Scripts\Auth_interface.cs" />
