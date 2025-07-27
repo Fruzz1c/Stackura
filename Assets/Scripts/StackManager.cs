@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections.Generic;
+using UnityEngine.SceneManagement;
 
 public class StackManager : MonoBehaviour
 {
@@ -56,18 +57,21 @@ public class StackManager : MonoBehaviour
     /// Спавнит следующий движущийся блок прямо над lastBlock
     /// </summary>
     private void SpawnNext()
-    {
-        Vector3 pos = lastBlock.position + Vector3.up * spawnOffsetY;
-        pos.x = lastBlock.position.x;
-        pos.z = lastBlock.position.z;
+{
+    Vector3 pos = lastBlock.position + Vector3.up * spawnOffsetY;
+    // после первого успешного приземления (placedBlocks.Count > 0) – рандомим X
+    pos.x = placedBlocks.Count > 0
+        ? Random.Range(-movementRange, movementRange)
+        : lastBlock.position.x;
+    pos.z = lastBlock.position.z;
 
-        currentBlock = Instantiate(blockPrefab, pos, Quaternion.identity);
+    currentBlock = Instantiate(blockPrefab, pos, Quaternion.identity);
 
-        var mb = currentBlock.GetComponent<MovingBlock>()
-                 ?? currentBlock.AddComponent<MovingBlock>();
-        mb.moveSpeed = moveSpeed;
-        mb.range     = movementRange;
-    }
+    var mb = currentBlock.GetComponent<MovingBlock>()
+             ?? currentBlock.AddComponent<MovingBlock>();
+    mb.moveSpeed = moveSpeed;
+    mb.range     = movementRange;
+}
 
     /// <summary>
     /// Останавливает PingPong-движение и даёт команду падать

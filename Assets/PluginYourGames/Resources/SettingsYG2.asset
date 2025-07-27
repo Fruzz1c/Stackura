@@ -137,7 +137,7 @@ MonoBehaviour:
       hi: 
   InterstitialAdv:
     showFirstAdv: 1
-    interAdvInterval: 60
+    interAdvInterval: 10
     postponeCallByFail: 0
     postponeCallTimer: 10
     labelAdvSimLabel: 0
@@ -260,8 +260,8 @@ MonoBehaviour:
   Simulation:
     device: 0
     language: ru
-    advIntervalSimulation: 60
-    durationAdv: 0.5
+    advIntervalSimulation: 10
+    durationAdv: 1
     loadAdv: 0
     testFailAds: 0
   Templates:
@@ -272,7 +272,7 @@ MonoBehaviour:
       angleInclination: 140
       color1: {r: 1, g: 0.831, b: 0.149, a: 1}
       color2: {r: 0.36, g: 0.09, b: 1, a: 1}
-    customProgressBar: 1
+    customProgressBar: 0
     progressBarSettigs:
       round: 1
       roundAngle: 10

@@ -522,6 +522,7 @@
 "Assets/PluginYourGames/Scripts/Server/ServerJson.cs"
 "Assets/PluginYourGames/Scripts/Utils/JsonYG.cs"
 "Assets/PluginYourGames/Scripts/Utils/LocalStorage_yg.cs"
+"Assets/Scripts/AdOnSceneLoad.cs"
 "Assets/Scripts/BaseBlock.cs"
 "Assets/Scripts/CameraFollow.cs"
 "Assets/Scripts/FadeIn.cs"

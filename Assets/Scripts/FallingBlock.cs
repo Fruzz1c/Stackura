@@ -4,7 +4,7 @@ using UnityEngine;
 public class FallingBlock : MonoBehaviour
 {
     [Tooltip("Скорость падения (units/sec)")]
-    public float fallSpeed = 5f;
+    public float fallSpeed = 10f;
 
     private StackManager manager;
     private Rigidbody rb;
@@ -36,6 +36,7 @@ public class FallingBlock : MonoBehaviour
         fallTimer += Time.deltaTime;
         if (fallTimer >= 0.5f)
         {
+            GameManager.Instance.ResetGame();
             // по таймауту — конец игры
             Debug.Log("Game Over! (timeout)");
             triggered = true;
@@ -58,6 +59,7 @@ public class FallingBlock : MonoBehaviour
         }
         else
         {
+            GameManager.Instance.ResetGame();
             // промах — оставляем динамическим, пусть падает дальше
             Debug.Log("Game Over! (miss)");
         }

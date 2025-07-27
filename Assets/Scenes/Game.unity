@@ -438,7 +438,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &245815764
 RectTransform:
   m_ObjectHideFlags: 0
@@ -927,8 +927,6 @@ GameObject:
   m_Component:
   - component: {fileID: 667118797}
   - component: {fileID: 667118798}
-  - component: {fileID: 667118799}
-  - component: {fileID: 667118800}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -944,7 +942,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 667118796}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -964,35 +962,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speedIncrement: 0.1
---- !u!114 &667118799
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 667118796}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b88fa49c3b03d3d4688cab0c9e660921, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  baseBlock: {fileID: 306414284}
-  menuUI: {fileID: 644973611}
-  gameScore: {fileID: 1643845397}
---- !u!114 &667118800
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 667118796}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 082b00d7e736d404fb89f0b0a6a32f9a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  scoreText: {fileID: 1643845399}
-  recordText: {fileID: 1979521893}
 --- !u!4 &699599927 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7863562849626394442, guid: ade826b5643248a4ca062047a5484624,
@@ -1510,7 +1479,7 @@ Transform:
   m_GameObject: {fileID: 963194225}
   serializedVersion: 2
   m_LocalRotation: {x: 0.17364816, y: 0, z: 0, w: 0.9848078}
-  m_LocalPosition: {x: 0, y: 15, z: -15}
+  m_LocalPosition: {x: 0, y: 65, z: -15}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1528,7 +1497,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3154a2146d684624dbf1a845718d38f8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stackManager: {fileID: 0}
+  stackManager: {fileID: 1345681054}
   offsetY: 10
   offsetX: 0
   smoothSpeed: 2
@@ -2239,6 +2208,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1345681055}
   - component: {fileID: 1345681054}
+  - component: {fileID: 1345681057}
+  - component: {fileID: 1345681056}
+  - component: {fileID: 1345681058}
   m_Layer: 0
   m_Name: StackManager
   m_TagString: Untagged
@@ -2276,13 +2248,54 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1345681053}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1345681056
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1345681053}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 082b00d7e736d404fb89f0b0a6a32f9a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scoreText: {fileID: 1643845399}
+  recordText: {fileID: 1979521893}
+--- !u!114 &1345681057
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1345681053}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b88fa49c3b03d3d4688cab0c9e660921, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  baseBlock: {fileID: 306414284}
+  menuUI: {fileID: 644973611}
+  gameScore: {fileID: 1643845397}
+--- !u!114 &1345681058
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1345681053}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a55af8f83d991994ba4842e28db11d94, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1377033401
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2722,7 +2735,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 667118799}
+      - m_Target: {fileID: 1345681057}
         m_TargetAssemblyTypeName: UiManager, Assembly-CSharp
         m_MethodName: startGame
         m_Mode: 1
@@ -3176,7 +3189,7 @@ GameObject:
   - component: {fileID: 1979521894}
   - component: {fileID: 1979521893}
   m_Layer: 5
-  m_Name: HighScoreText
+  m_Name: HighScore
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3394,7 +3407,7 @@ GameObject:
   - component: {fileID: 2146004311}
   - component: {fileID: 2146004310}
   m_Layer: 5
-  m_Name: RecordText
+  m_Name: HighScoreText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3439,7 +3452,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\u0420\u0435\u043A\u043E\u0440\u0434:"
+  m_text: 'HighScore:'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 5302535af1044152a457ed104f1f4b91, type: 2}
   m_sharedMaterial: {fileID: 2164040, guid: 5302535af1044152a457ed104f1f4b91, type: 2}
@@ -3466,7 +3479,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 72
+  m_fontSize: 57.2
   m_fontSizeBase: 58.5
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -3606,11 +3619,11 @@ PrefabInstance:
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
-  - {fileID: 667118797}
-  - {fileID: 1345681055}
-  - {fileID: 963194228}
   - {fileID: 705507995}
   - {fileID: 985625387}
+  - {fileID: 963194228}
+  - {fileID: 667118797}
+  - {fileID: 1345681055}
   - {fileID: 304305068}
-  - {fileID: 2505966322441835276}
   - {fileID: 1544800129}
+  - {fileID: 2505966322441835276}

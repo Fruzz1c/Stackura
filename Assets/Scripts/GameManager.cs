@@ -1,5 +1,6 @@
 
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -22,7 +23,7 @@ public class GameManager : MonoBehaviour
             return;
         }
         Instance = this;
-        DontDestroyOnLoad(gameObject);
+        //DontDestroyOnLoad(gameObject);
 
         // Загрузка рекорда
         HighScore = PlayerPrefs.GetInt("HighScore", 0);
@@ -60,6 +61,6 @@ public class GameManager : MonoBehaviour
         // сброс скорости на первоначальную (если нужно)
         if (stackManager != null)
             stackManager.moveSpeed = stackManager.moveSpeed - Score * speedIncrement;
-        // можно добавить перезагрузку сцены...
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 }
