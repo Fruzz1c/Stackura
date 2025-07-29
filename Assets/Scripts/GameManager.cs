@@ -17,6 +17,8 @@ public class GameManager : MonoBehaviour
 
     private const string LeaderboardId = "myLeaderboard";
 
+    public GameObject resumePanel;
+
     void Awake()
     {
         // Синглтон
@@ -78,14 +80,18 @@ public class GameManager : MonoBehaviour
     public void GameOver()
     {
         // Запись в лидерборд :contentReference[oaicite:4]{index=4}
-        YG2.SetLeaderboard(LeaderboardId, Score);
+        YG2.SetLeaderboard(LeaderboardId, HighScore);
 
         // Если вы добавили в сцену префаб LeaderboardCanvas с компонентом LeaderboardYG,
         // то просто обновим его:
         var lb = FindObjectOfType<LeaderboardYG>();
         if (lb != null) lb.UpdateLB();
 
-        Restart();
+        //resumePanel.transform.SetParent(FindObjectOfType<Canvas>().transform, false);
+        //resumePanel.transform.localPosition = Vector3.zero;
+        Instantiate(resumePanel, FindObjectOfType<Canvas>().transform, false);
+
+        //Restart();
     }
 
     /// <summary>Для совместимости с вашим FallingBlock.cs</summary>
@@ -94,7 +100,7 @@ public class GameManager : MonoBehaviour
         GameOver();
     }
 
-    private void Restart()
+    public void Restart()
     {
         Score = 0;
         if (stackManager != null)

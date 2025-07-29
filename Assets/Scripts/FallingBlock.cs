@@ -14,9 +14,9 @@ public class FallingBlock : MonoBehaviour
     /// <summary>Передаём ссылку на менеджер и скорость падения</summary>
     public void Initialize(StackManager mgr, float speed)
     {
-        manager   = mgr;
+        manager = mgr;
         fallSpeed = speed;
-        rb        = gameObject.AddComponent<Rigidbody>();
+        rb = gameObject.AddComponent<Rigidbody>();
         rb.useGravity = false;
     }
 
@@ -53,7 +53,6 @@ public class FallingBlock : MonoBehaviour
 
         if (placed)
         {
-            // остановка и «заморозка» удачно установленного блока
             rb.velocity    = Vector3.zero;
             rb.isKinematic = true;
         }

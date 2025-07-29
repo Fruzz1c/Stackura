@@ -13,6 +13,21 @@ public class MovingBlock : MonoBehaviour
     void Start()
     {
         startPos = transform.position;
+
+        // Меняем цвет объекта на случайный
+        Renderer renderer = GetComponent<Renderer>();
+        if (renderer != null)
+        {
+            renderer.material.color = new Color(
+                Random.value, // Случайный красный компонент
+                Random.value, // Случайный зеленый компонент
+                Random.value  // Случайный синий компонент
+            );
+        }
+        else
+        {
+            Debug.LogWarning("Renderer не найден на объекте!");
+        }
     }
 
     void Update()

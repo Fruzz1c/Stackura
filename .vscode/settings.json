@@ -51,5 +51,5 @@
         "temp/": true,
         "Temp/": true
     },
-    "dotnet.defaultSolution": "Stack It Up.sln"
+    "dotnet.defaultSolution": "Stackura.sln"
 }

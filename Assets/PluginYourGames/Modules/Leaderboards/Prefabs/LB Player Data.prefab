@@ -658,8 +658,8 @@ RectTransform:
   m_GameObject: {fileID: 7442660659306160117}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 4.25, y: 4.25, z: 4.25}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 1853885601529159631}
   - {fileID: 5685874637184666223}
@@ -688,6 +688,10 @@ MonoBehaviour:
     rank: {fileID: 7442660659715647009}
     name: {fileID: 7442660659084700632}
     score: {fileID: 7442660659206096142}
+  textMP:
+    rank: {fileID: 0}
+    name: {fileID: 0}
+    score: {fileID: 0}
   topPlayerActivityComponents:
   - {fileID: 8311217508094180555}
   currentPlayerActivityComponents:
